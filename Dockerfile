@@ -5,4 +5,4 @@ WORKDIR /terraform
 
 COPY . .  
 
-ENTRYPOINT ["terraform"]
+ENTRYPOINT ["sleep", "9999"]
