@@ -1,0 +1,4 @@
+# TODO change this to pull from environment variables
+aws_access_key = "foo" 
+aws_secret_key = "bar"
+aws_region = "ap-southeast-2"
