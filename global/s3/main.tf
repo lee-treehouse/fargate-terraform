@@ -1,16 +1,16 @@
 terraform {
   required_version = ">= 1.0.0"
 
-  /*backend "s3" {
+  backend "s3" {
        # Replace this with your bucket name!
-      bucket = "<YOUR_S3_BUCKET_HERE>"
+      bucket = "foo-bar-remote-state"
       key = "global/s3/terraform.tfstate"
       region= "us-east-2"
       # Replace this with your DynamoDB table name!
-      dynamodb_table = "YOUR_DYNAMODB_TABLE_NAME_HERE"
+      dynamodb_table = "foo-bar-dynamo"
       encrypt        = true
      }
-*/
+
 
 }
 

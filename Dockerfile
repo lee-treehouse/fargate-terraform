@@ -7,4 +7,4 @@ WORKDIR /terraform
 
 COPY . .  
 
-ENTRYPOINT ["bash", "-c"]
+ENTRYPOINT ["bash"]

@@ -1,26 +1,18 @@
 # fargate-terraform
 
-docker build -t terraform-docker .
+build image
+`docker build -t terraform-docker .`
 
-To initialize a new Terraform project, run the following command:
+run container (bash entrypoint)
+`docker run --rm -v $(pwd):/terraform -it terraform-docker`
 
-```shell
-
-docker run --rm -v $(pwd):/terraform terraform-docker init
-
-```
-
-This command mounts the current directory as the `/terraform` directory inside the Docker container and runs the `init` command using the `terraform` entrypoint defined in the `Dockerfile`.
-
-to plan and apply changes, use the following commands:
-
-```shell
-
-docker run --rm -v $(pwd):/terraform terraform-docker plan
-
-docker run --rm -v $(pwd):/terraform -it terraform-docker apply
-
-docker run --rm -v $(pwd):/terraform -it terraform-docker destroy
-
+# set env vars in container
 
 ```
+export AWS_ACCOUNT_ID=
+export AWS_SECRET_ACCESS_KEY=
+export AWS_ACCESS_KEY_ID=
+```
+
+cd into relevant folder then
+run terraform commands eg `terraform plan` `terraform destroy`
