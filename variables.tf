@@ -27,22 +27,24 @@ variable "az_count" {
 
 variable "app_image" {
     description = "Docker image to run in the ECS cluster"
-    default = "bradfordhamilton/crystal_blockchain:latest"
+    #default = "bradfordhamilton/crystal_blockchain:latest"
+    default = "leereehouse/foo:latest"
+
 }
 
 variable "app_port" {
     description = "Port exposed by the docker image to redirect traffic to"
-    default = 3000
+    default = 3123
 
 }
 
 variable "app_count" {
     description = "Number of docker containers to run"
-    default = 3
+    default = 1
 }
 
 variable "health_check_path" {
-  default = "/"
+  default = "/status"
 }
 
 variable "fargate_cpu" {
@@ -53,4 +55,16 @@ variable "fargate_cpu" {
 variable "fargate_memory" {
     description = "Fargate instance memory to provision (in MiB)"
     default = "2048"
+}
+
+variable "remote_state_bucket_name" {
+  description = "The name of the S3 bucket. Must be globally unique."
+  type        = string
+  default = "foo-bar-remote-state"
+}
+
+variable "remote_state_table_name" {
+  description = "The name of the DynamoDB table. Must be unique in this AWS account."
+  type        = string
+  default = "foo-bar-dynamo"
 }

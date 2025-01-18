@@ -15,4 +15,4 @@ export AWS_ACCESS_KEY_ID=
 ```
 
 cd into relevant folder then
-run terraform commands eg `terraform plan` `terraform destroy`
+run terraform commands eg `terraform plan` `terraform destroy` `terraform apply -auto-approve`
